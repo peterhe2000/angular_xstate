@@ -1,0 +1,60 @@
+<section class="user-list-section">
+  <section class="toolbar">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Please add a string to filter"
+        [(ngModel)]="filterText"
+      />
+    </mat-form-field>
+
+    State: {{currentState.toStrings()}}/
+    <ng-container *ngIf="currentState.matches('idle')">idle</ng-container>
+    <ng-container *ngIf="currentState.matches('running')">running</ng-container>
+    <ng-container *ngIf="currentState.matches('paused')">paused</ng-container>
+    <form [formGroup]="formGroup">
+      <label class="oddOrEven">OddOrEven:</label>
+      <mat-radio-group
+        formControlName="selectedOption"
+        (change)="onOptionChange($event)"
+      >
+        <mat-radio-button
+          class="radio-button"
+          *ngFor="let option of options"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </form>
+  </section>
+  <section class="users-table-container">
+    <table *ngIf="!usersLoading">
+      <tr>
+        <th>
+          Id
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Delete
+        </th>
+      </tr>
+      <tr *ngFor="let user of users | nameFilter: filterText; let i = index">
+        <td>{{ user.id }}</td>
+        <td>
+          <input
+            type="text"
+            [ngModel]="user.name"
+            (ngModelChange)="onNameChange($event, user.id)"
+          />
+        </td>
+        <td>
+          <button (click)="onDeleteButtonClick(user.id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </section>
+</section>

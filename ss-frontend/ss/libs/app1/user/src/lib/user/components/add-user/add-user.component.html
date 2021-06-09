@@ -1,0 +1,14 @@
+<section class="addUser">
+  <mat-form-field>
+    <mat-label>Please add a name</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Please add a name"
+      [(ngModel)]="name"
+    />
+  </mat-form-field>
+  <button (click)="onAddUser(name)">
+    Add
+  </button>
+</section>

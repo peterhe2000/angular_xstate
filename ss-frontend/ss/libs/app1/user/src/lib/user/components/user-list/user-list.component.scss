@@ -1,0 +1,28 @@
+.user-list-section {
+  padding: 1rem 0rem;
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .oddOrEven {
+      font-weight: bold;
+    }
+
+    .mat-radio-button ~ .mat-radio-button {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .users-table-container {
+    margin: 1rem 0rem;
+    table {
+      tr {
+        th {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

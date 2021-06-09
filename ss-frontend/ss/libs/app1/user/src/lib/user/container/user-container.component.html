@@ -1,0 +1,13 @@
+<ss-user-list
+  [users]="users$ | async"
+  [usersLoading]="usersLoading$ | async"
+  (deleteUser)="onDeleteUser($event)"
+  (nameChange)="onNameChange($event)"
+  (optionChange)="onOptionChange($event)"
+>
+</ss-user-list>
+<ss-add-user (addUser)="onAddUser($event)"></ss-add-user>
+<ng-container *ngIf="error$ | async">
+  <pre>{{ error$ | async | json }}</pre>
+  ></ng-container
+>
