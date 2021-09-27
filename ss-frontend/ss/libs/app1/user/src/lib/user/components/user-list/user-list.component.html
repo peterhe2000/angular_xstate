@@ -46,6 +46,7 @@
         <td>{{ user.id }}</td>
         <td>
           <input
+            data-testId="userNameInput"
             type="text"
             [ngModel]="user.name"
             (ngModelChange)="onNameChange($event, user.id)"

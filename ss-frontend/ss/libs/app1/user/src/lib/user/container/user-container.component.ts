@@ -14,7 +14,7 @@ import * as UserActions from '../../shared/data-access/user/+state/user.actions'
 import * as fromUser from '../../shared/data-access/user/+state/user.reducer';
 import * as fromUserStore from '../../shared/data-access/user/+state/index';
 import { takeUntil } from 'rxjs/operators';
-import { User } from '../../shared/interfaces';
+import { User } from '@ss/app1/user';
 
 @Component({
   selector: 'ss-user-container',
@@ -33,20 +33,20 @@ export class UserContainerComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.store.dispatch(UserActions.loadUsers());
-    this.users$ = of([
-      { id: 1, name: 'Peter' },
-      { id: 2, name: 'Sam' },
-      { id: 3, name: 'Jo' },
-      { id: 4, name: 'Marie' },
-    ]);
-    // this.usersLoading$ = this.store.pipe(
-    //   select(fromUserStore.getUsersLoading),
-    //   takeUntil(this._destroyed$)
-    // );
-    // this.users$ = this.store.pipe(
-    //   select(fromUserStore.getUsers),
-    //   takeUntil(this._destroyed$)
-    // );
+    // this.users$ = of([
+    //   { id: 1, name: 'Peter' },
+    //   { id: 2, name: 'Sam' },
+    //   { id: 3, name: 'Jo' },
+    //   { id: 4, name: 'Marie' },
+    // ]);
+    this.usersLoading$ = this.store.pipe(
+      select(fromUserStore.getUsersLoading),
+      takeUntil(this._destroyed$)
+    );
+    this.users$ = this.store.pipe(
+      select(fromUserStore.getUsers),
+      takeUntil(this._destroyed$)
+    );
     this.error$ = this.store.pipe(
       select(fromUserStore.getError),
       takeUntil(this._destroyed$)
