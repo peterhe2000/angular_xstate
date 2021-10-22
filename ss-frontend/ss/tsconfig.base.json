@@ -16,7 +16,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ss/app1/user": ["libs/app1/user/src/index.ts"]
+      "@ss/app1/user": ["libs/app1/user/src/index.ts"],
+      "@ss/mpcommon-library": ["libs/mpcommon-library/src/index.ts"],
+      "@ss/mp-component-library": ["libs/mp-component-library/src/index.ts"],
+      "@ss/mp-ui": ["libs/mp-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

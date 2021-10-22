@@ -32,6 +32,43 @@
     },
     "app1-user": {
       "tags": []
+    },
+    "teacher-web": {
+      "tags": []
+    },
+    "teacher-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["teacher-web"]
+    },
+    "student-web": {
+      "tags": []
+    },
+    "student-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["student-web"]
+    },
+    "lcm": {
+      "tags": []
+    },
+    "lcm-e2e": {
+      "tags": [],
+      "implicitDependencies": ["lcm"]
+    },
+    "watto": {
+      "tags": []
+    },
+    "watto-e2e": {
+      "tags": [],
+      "implicitDependencies": ["watto"]
+    },
+    "mpcommon-library": {
+      "tags": []
+    },
+    "mp-component-library": {
+      "tags": []
+    },
+    "mp-ui": {
+      "tags": []
     }
   }
 }
