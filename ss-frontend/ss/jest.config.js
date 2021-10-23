@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/mpcommon-library',
     '<rootDir>/libs/mp-component-library',
     '<rootDir>/libs/mp-ui',
+    '<rootDir>/apps/api',
   ],
 };
