@@ -51,6 +51,7 @@
     "@ngrx/store-devtools": "^10.0.0",
     "@nrwl/angular": "10.3.0",
     "@xstate/inspect": "0.1.1",
+    "ngrx-store-localstorage": "10.1.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "xstate": "^4.14.0",
